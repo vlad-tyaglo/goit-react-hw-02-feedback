@@ -1,5 +1,6 @@
 import React from "react";
 import { FeedbackOptions } from "./FeedBackOptions/FeedBackOptions";
+import { Notification } from "./Notification/Notification";
 import { Section } from "./Section/Section";
 import { Statistics } from "./Statistics/Statistics";
 
@@ -36,15 +37,14 @@ export class App extends React.Component {
           onLeaveFeedback={this.onButtonClick}>
           </FeedbackOptions>
         </Section>
-        
         <Section title="Statistics">
-          <Statistics
+          {this.countTotalFeedback() === 0 ? <Notification massage=""></Notification> : <Statistics
           good={this.state.good} 
           neutral={this.state.neutral} 
           bad={this.state.bad}
           total={this.countTotalFeedback()} 
           positivePercentage={this.countPositiveFeedbackPercentage()}>
-          </Statistics>
+          </Statistics>}
         </Section>
       </div>
     )
