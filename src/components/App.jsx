@@ -38,7 +38,7 @@ export class App extends React.Component {
           </FeedbackOptions>
         </Section>
         <Section title="Statistics">
-          {this.countTotalFeedback() === 0 ? <Notification massage=""></Notification> : <Statistics
+          {this.countTotalFeedback() === 0 ? <Notification massage="There is no feedback"></Notification> : <Statistics
           good={this.state.good} 
           neutral={this.state.neutral} 
           bad={this.state.bad}
